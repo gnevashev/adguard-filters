@@ -1,0 +1,50 @@
+! Title: Gnevashev Personal Filters
+! Description: Personal ad/tracker blocklist for the home + VPS AdGuard Home setup. DNS-level rules.
+! Homepage: https://github.com/<your-user>/<repo>
+! License: MIT
+! Version: 0.1.0
+! Last modified: 2026-05-27
+! Expires: 1 day
+!
+! How to use:
+!   AdGuard Home -> Filters -> DNS blocklists -> Add blocklist -> "Add a custom list"
+!   URL: https://raw.githubusercontent.com/<your-user>/<repo>/main/filters/gnevashev-personal.txt
+!
+! Syntax notes (AdGuard Home is DNS-level):
+!   ||example.com^          block domain + all subdomains
+!   @@||example.com^        allowlist (exception), wins over a block
+!   ! comment
+!   Cosmetic rules (##selector) and path rules (/path) do NOT work at DNS level —
+!   they only work in a browser blocker (uBlock Origin / AdGuard extension).
+!   Keep those in the separate "cosmetic" section at the bottom for browser use.
+
+! ------------------------------------------------------------------
+! profinance.ru / forexpf — ad delivery that slips past stock lists
+! ------------------------------------------------------------------
+! Yandex.Direct banner-serving endpoints (an.yandex.ru is already on stock
+! lists; these two actually deliver the creatives and are usually NOT blocked).
+||yabs.yandex.ru^
+! yastatic hosts the РСЯ ad code (pcode). Blocking the whole domain is risky
+! (it also serves fonts/maps), so scope it — DNS can't match paths, so this is
+! left for the browser/cosmetic section instead. See bottom.
+
+! ------------------------------------------------------------------
+! General trackers / ad networks (add as you find them)
+! ------------------------------------------------------------------
+! (empty — append new ||domain^ rules here)
+
+! ------------------------------------------------------------------
+! Allowlist / exceptions (things stock lists block but you want)
+! ------------------------------------------------------------------
+! @@||example.com^
+
+! ==================================================================
+! BROWSER-ONLY rules (uBlock Origin / AdGuard extension).
+! Ignored by AdGuard Home. Move here anything path- or element-based.
+! ==================================================================
+! First-party ad slots on profinance.ru (DNS can't touch these):
+! profinance.ru##.adv
+! ||www.profinance.ru/_adv_/
+! ||www.profinance.ru/adv/
+! Yandex РСЯ ad code by path:
+! ||yastatic.net/pcode/
