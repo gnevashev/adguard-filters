@@ -1,6 +1,6 @@
 ! Title: Gnevashev Personal Filters
 ! Description: Personal ad/tracker blocklist for the home + VPS AdGuard Home setup. DNS-level rules.
-! Homepage: https://github.com/<your-user>/<repo>
+! Homepage: https://github.com/gnevashev/adguard-filters
 ! License: MIT
 ! Version: 0.1.0
 ! Last modified: 2026-05-27
@@ -8,7 +8,7 @@
 !
 ! How to use:
 !   AdGuard Home -> Filters -> DNS blocklists -> Add blocklist -> "Add a custom list"
-!   URL: https://raw.githubusercontent.com/<your-user>/<repo>/main/filters/gnevashev-personal.txt
+!   URL: https://raw.githubusercontent.com/gnevashev/adguard-filters/main/filters/gnevashev-personal.txt
 !
 ! Syntax notes (AdGuard Home is DNS-level):
 !   ||example.com^          block domain + all subdomains

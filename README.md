@@ -13,7 +13,7 @@ Personal ad/tracker blocklists for my home + VPS [AdGuard Home](https://adguard.
 Filters → DNS blocklists → **Add blocklist → Add a custom list**, then paste the raw URL:
 
 ```
-https://raw.githubusercontent.com/<your-user>/adguard-filters/main/filters/gnevashev-personal.txt
+https://raw.githubusercontent.com/gnevashev/adguard-filters/main/filters/gnevashev-personal.txt
 ```
 
 AdGuard Home re-fetches per the `! Expires:` header (1 day).
