@@ -2,7 +2,7 @@
 ! Description: Personal ad/tracker blocklist for the home + VPS AdGuard Home setup. DNS-level rules.
 ! Homepage: https://github.com/gnevashev/adguard-filters
 ! License: MIT
-! Version: 0.2.0
+! Version: 0.3.0
 ! Last modified: 2026-05-27
 ! Expires: 1 day
 !
@@ -33,6 +33,10 @@
 ! ------------------------------------------------------------------
 ! mail.ru identity-sync / cookie-matching tracker (seen on profinance.ru)
 ||privacy-cs.mail.ru^
+! Shkulev MediaDash ad platform (seen on 74.ru; analytics.mediadash.ru already on stock lists)
+||maxdash.ru^
+! LiveInternet counter/badge host (the yadro.ru counter is on stock lists, this host is not)
+||www.liveinternet.ru^
 
 ! ------------------------------------------------------------------
 ! Allowlist / exceptions (things stock lists block but you want)
